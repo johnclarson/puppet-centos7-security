@@ -5,7 +5,7 @@ class security {
         owner      => 'root',
         group      => 'root',
         mode       => '0600',
-        source     => 'puppet:///modules/base/etc/audit/audit.rules',
+        source     => 'puppet:///modules/security/etc/audit/audit.rules',
         notify     => Service[ 'auditd' ] 
     }
 
@@ -14,7 +14,7 @@ class security {
         owner      => 'root',
         group      => 'root',
         mode       => '0755',
-        source     => 'puppet:///modules/base/etc/cron.daily/auditd.cron'
+        source     => 'puppet:///modules/security/etc/cron.daily/auditd.cron'
     }
 
     file { '/etc/profile':
@@ -22,7 +22,7 @@ class security {
         owner      => 'root',
         group      => 'root',
         mode       => '0444',
-        source     => 'puppet:///modules/base/etc/profile'
+        source     => 'puppet:///modules/security/etc/profile'
     }
 
     file { '/etc/csh.cshrc':
@@ -30,7 +30,7 @@ class security {
         owner      => 'root',
         group      => 'root',
         mode       => '0444',
-        source     => 'puppet:///modules/base/etc/csh.cshrc'
+        source     => 'puppet:///modules/security/etc/csh.cshrc'
     }
 
     file { '/etc/bashrc':
@@ -38,7 +38,7 @@ class security {
         owner      => 'root',
         group      => 'root',
         mode       => '0444',
-        source     => 'puppet:///modules/base/etc/bashrc'
+        source     => 'puppet:///modules/security/etc/bashrc'
     }
 
     file { '/etc/cron.allow':
@@ -115,15 +115,7 @@ class security {
         owner      => 'root',
         group      => 'root',
         mode       => '0644',
-        source     => 'puppet:///modules/base/etc/issue',
-    }
-
-    file { '/etc/inittab':
-        ensure     => file,
-        owner      => 'root',
-        group      => 'root',
-        mode       => '0600',
-        content    => template( 'base/etc/inittab.erb' ),
+        source     => 'puppet:///modules/security/etc/issue',
     }
 
     file { '/etc/issue.net':
