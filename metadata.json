@@ -1,0 +1,14 @@
+{
+  "name": "johnclarson-security",
+  "version": "0.1.0",
+  "author": "johnclarson",
+  "summary": "Operating system security hardening",
+  "license": "Apache 2.0",
+  "source": "https://github.com/johnclarson/puppet-centos7-security.git",
+  "project_page": "https://github.com/johnclarson/puppet-centos7-security",
+  "issues_url": "https://github.com/johnclarson/puppet-centos7-security/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ]
+}
+
