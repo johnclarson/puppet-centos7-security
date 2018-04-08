@@ -6,7 +6,6 @@ class security {
         group      => 'root',
         mode       => '0600',
         source     => 'puppet:///modules/security/etc/audit/audit.rules',
-        notify     => Service[ 'auditd' ] 
     }
 
     file { '/etc/cron.daily/auditd.cron':
