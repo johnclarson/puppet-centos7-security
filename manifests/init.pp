@@ -1,5 +1,33 @@
 class security {
 
+    ini_setting { "ocredit":
+        ensure  => present,
+        path    => '/etc/security/pwquality.conf',
+        setting => 'ocredit',
+        value   => '-1',
+    }
+
+    ini_setting { "ucredit":
+        ensure  => present,
+        path    => '/etc/security/pwquality.conf',
+        setting => 'ucredit',
+        value   => '-1',
+    }
+
+    ini_setting { "dcredit":
+        ensure  => present,
+        path    => '/etc/security/pwquality.conf',
+        setting => 'dcredit',
+        value   => '-1',
+    }
+
+    ini_setting { "minlen":
+        ensure  => present,
+        path    => '/etc/security/pwquality.conf',
+        setting => 'minlen',
+        value   => '14',
+    }
+
     file { '/etc/audit/rules.d/audit.rules':
         ensure     => file,
         owner      => 'root',
@@ -172,6 +200,7 @@ class security {
            "set net.ipv4.conf.all.send_redirects 0",
            "set net.ipv4.conf.all.accept_redirects 0",
            "set net.ipv4.conf.all.secure_redirects 0",
+           "set kernel.randomize_va_space 2",
         ],
     }
 

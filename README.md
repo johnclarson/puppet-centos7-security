@@ -24,6 +24,8 @@ Very basic right now. Just an init.pp with file, service and augeas rules.
 
 ## Setup
 
+Requires puppetlabs-inifile
+
 ### What security affects
 
 This module can affect many core security files and services.
