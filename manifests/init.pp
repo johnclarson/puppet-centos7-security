@@ -84,12 +84,20 @@ class security {
         content     => 'root'
     }
 
-    file { ['/etc/crontab', '/etc/securetty', '/root/.bash_profile', '/root/.bashrc', '/root.cshrc',
+    file { ['/etc/crontab', '/root/.bash_profile', '/root/.bashrc', '/root.cshrc',
            '/root/.tcshrc', '/var/log/lastlog']:
         ensure     => file,
         owner      => 'root',
         group      => 'root',
         mode       => '0400',
+    }
+ 
+    file { '/etc/securetty':
+        ensure     => file,
+        owner      => 'root',
+        group      => 'root',
+        mode       => '0400',
+        content    => "",
     }
 
     file { ['/etc/at.deny', '/etc/audit/auditd.conf', '/etc/cron.deny', '/etc/sysctl.conf',
@@ -233,11 +241,20 @@ class security {
         ],
     }
 
- augeas { 'securetty_novc':
-        context   => '/files/etc/securetty/',
+    augeas { 'sshd_config':
+        context   => '/files/etc/ssh/sshd_config/',
         changes   => [
-           "rm *[. =~ glob('vc/*')]",
+           "set PermitRootLogin no",
+           "set Ciphers/1 aes128-ctr",
+           "set Ciphers/2 aes192-ctr",
+           "set Ciphers/3 aes256-ctr",
+           "set Ciphers/4 aes128-cbc",
+           "set Ciphers/5 3des-cbc",
+           "set Ciphers/6 aes192-cbc",
+           "set Ciphers/7 aes256-cbc",
+           "set MACs/1 hmac-sha2-256",
+           "set MACs/2 hmac-sha2-512",
+           "set MACs/3 hmac-sha1",
         ],
     }
-
 }
