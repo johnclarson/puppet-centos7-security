@@ -35,6 +35,8 @@ This module can affect many core security files and services.
 
 ### Beginning with security
 
+### Headless Puppet
+
 ## Usage
 
 ## Reference
