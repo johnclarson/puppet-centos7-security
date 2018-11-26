@@ -37,9 +37,9 @@ This module can affect many core security files and services.
 
 ### Headless Puppet
 
-Install puppet client: rpm -ivh http://yum.puppetlabs.com/puppetlabs-release-el-7.noarch.rpm
+Install puppet client: sudo rpm -ivh http://yum.puppetlabs.com/puppetlabs-release-el-7.noarch.rpm
 
-Install puppet-inifile module from forge:
+Install puppet-inifile module from forge: sudo /opt/puppetlabs/bin/puppet module install puppetlabs-inifile --version 2.4.0
 
 
 ## Usage
