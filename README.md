@@ -8,6 +8,7 @@
     * [What security affects](#what-security-affects)
     * [Setup requirements](#setup-requirements)
     * [Beginning with security](#beginning-with-security)
+    * [Running headless puppet.](#headless-puppet)
 4. [Usage - Configuration options and additional functionality](#usage)
 5. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
 5. [Limitations - OS compatibility, etc.](#limitations)
@@ -25,6 +26,7 @@ Very basic right now. Just an init.pp with file, service and augeas rules.
 ## Setup
 
 Requires puppetlabs-inifile
+
 
 ### What security affects
 
