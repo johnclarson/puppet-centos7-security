@@ -25,7 +25,7 @@ Very basic right now. Just an init.pp with file, service and augeas rules.
 
 ## Setup
 
-Requires puppetlabs-inifile
+Requires puppetlabs-inifile, augeas
 
 
 ### What security affects
@@ -40,6 +40,10 @@ This module can affect many core security files and services.
 Install puppet client: sudo rpm -ivh http://yum.puppetlabs.com/puppetlabs-release-el-7.noarch.rpm
 
 Install puppet-inifile module from forge: sudo /opt/puppetlabs/bin/puppet module install puppetlabs-inifile --version 2.4.0
+ 
+Install this module: sudo /opt/puppetlabs/bin/puppet module install johnclarson-security --version 0.1.3
+
+Install augeas: sudo yum install augeas
 
 
 ## Usage
